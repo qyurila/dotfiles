@@ -1,5 +1,8 @@
 README.md
 
+{{- if ne .chezmoi.os "linux" }}
+.config/fish
+{{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
 scoop
