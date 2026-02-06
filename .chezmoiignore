@@ -2,8 +2,12 @@ README.md
 
 {{- if ne .chezmoi.os "linux" }}
 .config/fish
+
+~/.config/yazi
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
 scoop
+
+AppData/Roaming/yazi/config
 {{- end }}

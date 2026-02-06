@@ -15,9 +15,9 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[32;2u"
+                "input": "\u001b[13;5u"
             },
-            "id": "User.sendInput.A2FE21EB"
+            "id": "User.sendInput.F8A79DCB"
         },
         {
             "command": 
@@ -31,9 +31,9 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[13;5u"
+                "input": "\u001b[32;2u"
             },
-            "id": "User.sendInput.F8A79DCB"
+            "id": "User.sendInput.A2FE21EB"
         },
         {
             "command": 
@@ -54,7 +54,7 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{2bdd6e0c-7b21-5417-8511-bf58278a5bb2}",
+    "defaultProfile": "{67f2d94e-a6be-5769-a705-ef5e9c27a108}",
     "keybindings": 
     [
         {
@@ -74,12 +74,12 @@
             "keys": "ctrl+v"
         },
         {
-            "id": "User.sendInput.A2FE21EB",
-            "keys": "shift+space"
-        },
-        {
             "id": "User.sendInput.B8014EBD",
             "keys": "ctrl+shift+enter"
+        },
+        {
+            "id": "User.sendInput.A2FE21EB",
+            "keys": "shift+space"
         },
         {
             "id": "User.sendInput.E116B028",
@@ -106,6 +106,7 @@
         {
             "backgroundImage": "C:/Users/Hyeon/OneDrive/Pictures/Blue Archive Wallpapers/iPad/iPad-2205-25.jpg",
             "backgroundImageOpacity": 0.1,
+            "closeOnExit": "never",
             "colorScheme": "ayu Dark",
             "font": 
             {
@@ -119,7 +120,7 @@
             {
                 "backgroundImage": "C:/Users/Hyeon/OneDrive/Pictures/Gakuen Idolmaster/sunfaded-oumlr-f36881.jpg",
                 "backgroundImageOpacity": 0.12,
-                "guid": "{2bdd6e0c-7b21-5417-8511-bf58278a5bb2}",
+                "guid": "{67f2d94e-a6be-5769-a705-ef5e9c27a108}",
                 "hidden": false,
                 "name": "Debian",
                 "source": "Microsoft.WSL"
