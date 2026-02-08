@@ -1,0 +1,23 @@
+[user]
+	name = QriLa
+	email = rea9lizer@gmail.com
+[init]
+	defaultBranch = main
+[credential]
+	helper = !C:/Users/Hyeon/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
+[safe]
+	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
+
+[core]
+	autocrlf = false
+	editor = micro
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[rerere]
+    enabled = true
+    autoUpdate = false
