@@ -1,13 +1,23 @@
 README.md
 
 {{- if ne .chezmoi.os "linux" }}
-.config/fish
 
-~/.config/yazi
+# Linux-only apps
+.config/fish/
+
+# Cross-platform apps with Linux-specific paths
+.config/helix/config.toml
+.config/yazi/
+
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
+
+# Windows-only apps
 scoop
 
-AppData/Roaming/yazi/config
+# Cross-platform apps with Windows-specific paths
+AppData/Roaming/helix/config.toml
+AppData/Roaming/yazi/config/
+
 {{- end }}
