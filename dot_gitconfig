@@ -9,9 +9,11 @@
 	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
 
 [core]
-	autocrlf = false
-	editor = micro
+	editor = hx
 	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+	autocrlf = false
+	eol = lf
+
 [fetch]
 	prune = true
 [pull]
@@ -19,5 +21,5 @@
 [rebase]
 	autoStash = true
 [rerere]
-    enabled = true
-    autoUpdate = false
+	enabled = true
+	autoUpdate = false
