@@ -1,0 +1,24 @@
+theme = "ayu_mirage"
+
+[editor]
+line-number = "relative"
+
+# Swap h with j for Colemak-DH
+[keys.normal]
+h = "move_visual_line_down"
+j = "move_char_left"
+
+[keys.normal.z]
+h = "scroll_down"
+
+[keys.normal.g]
+h = "move_line_down"
+j = "goto_line_start"
+
+[keys.normal.C-w]
+C-h = "jump_view_down"
+h = "jump_view_down"
+H = "swap_view_down"
+C-j = "jump_view_left"
+j = "jump_view_left"
+J = "swap_view_left"
