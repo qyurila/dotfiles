@@ -122,6 +122,8 @@
                 "backgroundImageOpacity": 0.12,
 {{- if eq .chezmoi.hostname "Hyeon-LT-2401" }}
                 "guid": "{67f2d94e-a6be-5769-a705-ef5e9c27a108}",
+{{- else if eq .chezmoi.hostname "Hyeon-PC-2305" }}
+                "guid": "{76834a7e-0150-5f87-9c2a-f0d066c620e4}",
 {{- end }}
                 "hidden": false,
                 "name": "Debian",
@@ -144,24 +146,6 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {
-                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-                "hidden": true,
-                "name": "Azure Cloud Shell",
-                "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{93b1ca6f-9fa5-5735-9312-69db9d814074}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{fbc24d34-fa3d-54bd-9f18-32096234d6e3}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
