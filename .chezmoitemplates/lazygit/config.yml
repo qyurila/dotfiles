@@ -5,4 +5,5 @@ keybinding:
     prevBlock-alt: j
     scrollDownMain-alt1: H
   commits:
-    moveDownCommit: <c-h>
+    # <c-h> is not accepted as it's indistinguishable from <backspace>
+    moveDownCommit: <backspace>
