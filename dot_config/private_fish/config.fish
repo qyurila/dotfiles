@@ -1,4 +1,5 @@
 source ~/.config/fish/abbr.fish
+source ~/.config/fish/envs.fish
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
