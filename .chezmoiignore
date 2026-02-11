@@ -2,26 +2,18 @@ README.md
 
 {{- if ne .chezmoi.os "linux" }}
 
-# Linux-only apps
-.config/fish/
-.config/mise/
-.config/zellij/
+# Linux apps
+.config/
 
-# Cross-platform apps with Linux-specific paths
-.config/helix/
-.config/lazygit/config.yml
-.config/yazi/
+# Windows apps that use .config/
+!.config/starship.toml
 
 {{- end }}
 
 {{- if ne .chezmoi.os "windows" }}
 
 # Windows-only apps
-scoop
-
-# Cross-platform apps with Windows-specific paths
-AppData/Roaming/helix/
-AppData/Local/lazygit/config.yml
-AppData/Roaming/yazi/
+scoop/
+AppData/
 
 {{- end }}
