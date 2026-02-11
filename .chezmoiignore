@@ -4,9 +4,12 @@ README.md
 
 # Linux-only apps
 .config/fish/
+.config/mise/
+.config/zellij/
 
 # Cross-platform apps with Linux-specific paths
-.config/helix/config.toml
+.config/helix/
+.config/lazygit/config.yml
 .config/yazi/
 
 {{- end }}
@@ -17,7 +20,8 @@ README.md
 scoop
 
 # Cross-platform apps with Windows-specific paths
-AppData/Roaming/helix/config.toml
-AppData/Roaming/yazi/config/
+AppData/Roaming/helix/
+AppData/Local/lazygit/config.yml
+AppData/Roaming/yazi/
 
 {{- end }}
