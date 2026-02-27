@@ -2,6 +2,8 @@ source ~/.config/fish/abbr.fish
 source ~/.config/fish/envs.fish
 
 mise activate fish | source
+
+atuin init fish | source
 starship init fish | source
 zoxide init fish | source
 
