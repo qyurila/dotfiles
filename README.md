@@ -1,6 +1,6 @@
 # Dotfiles (managed by chezmoi)
 
-## Windows
+## Notes
 
 - `~/scoop/persist/windows-terminal/settings/settings.json`
 	- Overwritten by Windows Terminal seemingly non-deterministically
