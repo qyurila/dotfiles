@@ -55,6 +55,12 @@
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "disabledProfileSources": 
+    [
+        "Windows.Terminal.Azure",
+        "Windows.Terminal.VisualStudio",
+        "Windows.Terminal.Wsl"
+    ],
     "keybindings": 
     [
         {
@@ -92,6 +98,38 @@
         {
             "id": "Terminal.DuplicatePaneAuto",
             "keys": "alt+shift+d"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+plus"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+minus"
+        },
+        {
+            "id": null,
+            "keys": "alt+shift+minus"
+        },
+        {
+            "id": null,
+            "keys": "alt+shift+plus"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+numpad_minus"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+numpad_plus"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+p"
+        },
+        {
+            "id": null,
+            "keys": "alt+enter"
         }
     ],
     "newTabMenu": 
@@ -110,6 +148,7 @@
             "colorScheme": "ayu Dark",
             "font": 
             {
+                "cellHeight": "1.5",
                 "face": "JetBrainsMono Nerd Font",
                 "size": 11
             },
@@ -136,13 +175,11 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "commandline": "%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "%SystemRoot%/System32/cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
