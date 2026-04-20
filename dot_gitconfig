@@ -3,16 +3,20 @@
 	email = rea9lizer@gmail.com
 [init]
 	defaultBranch = main
+{{- if eq .chezmoi.os "windows"}}
 [credential]
 	helper = !C:/Users/Hyeon/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
 [safe]
 	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
+{{- end}}
 
 [core]
 	editor = hx
-	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
 	autocrlf = false
 	eol = lf
+{{- if eq .chezmoi.os "windows"}}
+	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe
+{{- end}}
 
 [fetch]
 	prune = true
