@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[13;2u"
@@ -12,7 +12,7 @@
             "id": "User.sendInput.8882FD6D"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[13;5u"
@@ -20,7 +20,7 @@
             "id": "User.sendInput.F8A79DCB"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[13;6u"
@@ -28,7 +28,7 @@
             "id": "User.sendInput.B8014EBD"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[32;2u"
@@ -36,7 +36,7 @@
             "id": "User.sendInput.A2FE21EB"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[32;5u"
@@ -44,7 +44,7 @@
             "id": "User.sendInput.E116B028"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "sendInput",
                 "input": "\u001b[32;6u"
@@ -52,120 +52,86 @@
             "id": "User.sendInput.355D2F28"
         }
     ],
+    "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-    "disabledProfileSources": 
-    [
-        "Windows.Terminal.Azure",
-        "Windows.Terminal.VisualStudio",
-        "Windows.Terminal.Wsl"
-    ],
-    "keybindings": 
+    "keybindings":
     [
         {
-            "id": "User.sendInput.8882FD6D",
-            "keys": "shift+enter"
-        },
-        {
-            "id": "User.sendInput.355D2F28",
-            "keys": "ctrl+shift+space"
-        },
-        {
-            "id": "User.sendInput.F8A79DCB",
-            "keys": "ctrl+enter"
+            "id": "Terminal.CopyToClipboard",
+            "keys": "ctrl+c"
         },
         {
             "id": "Terminal.PasteFromClipboard",
             "keys": "ctrl+v"
         },
         {
-            "id": "User.sendInput.B8014EBD",
-            "keys": "ctrl+shift+enter"
+            "id": "User.sendInput.F8A79DCB",
+            "keys": "ctrl+enter"
+        },
+        {
+            "id": "User.sendInput.355D2F28",
+            "keys": "ctrl+shift+space"
+        },
+        {
+            "id": "User.sendInput.8882FD6D",
+            "keys": "shift+enter"
         },
         {
             "id": "User.sendInput.A2FE21EB",
             "keys": "shift+space"
         },
         {
+            "id": "User.sendInput.B8014EBD",
+            "keys": "ctrl+shift+enter"
+        },
+        {
             "id": "User.sendInput.E116B028",
             "keys": "ctrl+space"
-        },
-        {
-            "id": "Terminal.CopyToClipboard",
-            "keys": "ctrl+c"
-        },
-        {
-            "id": "Terminal.DuplicatePaneAuto",
-            "keys": "alt+shift+d"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+plus"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+minus"
-        },
-        {
-            "id": null,
-            "keys": "alt+shift+minus"
-        },
-        {
-            "id": null,
-            "keys": "alt+shift+plus"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+numpad_minus"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+numpad_plus"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+shift+p"
-        },
-        {
-            "id": null,
-            "keys": "alt+enter"
         }
     ],
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "backgroundImage": "C:/Users/Hyeon/OneDrive/Pictures/Blue Archive Wallpapers/iPad/iPad-2205-25.jpg",
             "backgroundImageOpacity": 0.1,
             "closeOnExit": "never",
             "colorScheme": "ayu Dark",
-            "font": 
+            "font":
             {
-                "cellHeight": "1.5",
-                "face": "JetBrainsMono Nerd Font",
+                "face": "Jetendard",
                 "size": 11
             },
             "padding": "8"
         },
-        "list": 
+        "list":
         [
             {
                 "backgroundImage": "C:/Users/Hyeon/OneDrive/Pictures/Gakuen Idolmaster/sunfaded-oumlr-f36881.jpg",
                 "backgroundImageOpacity": 0.12,
-{{- if eq .chezmoi.hostname "Hyeon-LT-2401" }}
-                "guid": "{67f2d94e-a6be-5769-a705-ef5e9c27a108}",
-{{- else if eq .chezmoi.hostname "Hyeon-PC-2305" }}
-                "guid": "{76834a7e-0150-5f87-9c2a-f0d066c620e4}",
-{{- end }}
+                "commandline": "ssh qyurila@Debian-2608",
+                "guid": "{278b5795-b5ea-4ddb-9aff-1080d443325a}",
                 "hidden": false,
-                "name": "Debian",
+                "icon": "C:\\Users\\Hyeon\\OneDrive\\Pictures\\debian.ico",
+                "name": "Debian 2608"
+            },
+            {
+            {{- if eq .chezmoi.hostname "Hyeon-LT-2401" }}
+                            "guid": "{67f2d94e-a6be-5769-a705-ef5e9c27a108}",
+            {{- else if eq .chezmoi.hostname "Hyeon-PC-2305" }}
+                            "guid": "{76834a7e-0150-5f87-9c2a-f0d066c620e4}",
+            {{- end }}
+                "hidden": false,
+                "icon": "C:\\Program Files\\WSL\\wslsettings\\Assets\\wsl.ico",
+                "name": "WSL (Debian)",
                 "source": "Microsoft.WSL"
             },
             {
@@ -175,6 +141,7 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
+                "commandline": "%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -186,7 +153,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0D1017",
