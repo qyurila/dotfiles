@@ -3,12 +3,6 @@
 	email = rea9lizer@gmail.com
 [init]
 	defaultBranch = main
-{{- if eq .chezmoi.os "windows"}}
-[credential]
-	helper = !C:/Users/Hyeon/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
-[safe]
-	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
-{{- end}}
 
 [core]
 	editor = hx
@@ -27,3 +21,12 @@
 [rerere]
 	enabled = true
 	autoUpdate = false
+
+{{- if eq .chezmoi.os "windows"}}
+[credential]
+	helper = !C:/Users/Hyeon/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
+[safe]
+	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
+[windows]
+	appendAtomically = false
+{{- end}}
