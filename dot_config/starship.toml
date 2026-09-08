@@ -4,6 +4,7 @@ format = """
 [](red)\
 $os\
 $username\
+$hostname\
 [](bg:peach fg:red)\
 $directory\
 [](bg:yellow fg:peach)\
@@ -193,3 +194,9 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[hostname]
+disabled = false
+format = '[ $ssh_symbol]($style)'
+ssh_symbol = ''
+style = "bg:red fg:crust"
