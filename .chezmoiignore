@@ -3,7 +3,7 @@ README.md
 {{- if ne .chezmoi.os "linux" }}
 
 # Linux apps
-.config/
+.config/*
 
 # Windows apps that use .config/
 !.config/starship.toml
