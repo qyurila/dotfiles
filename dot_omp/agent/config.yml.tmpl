@@ -1,0 +1,68 @@
+{{- if eq .chezmoi.os "windows" }}
+shellPath: C:\Windows\system32\bash.exe
+{{- end }}
+
+modelRoles:
+  plan: magpie/claude/claude-opus-5-5:high
+  tiny: magpie/group/auto-muse-spark-1-3-contributor:high
+  advisor: magpie/group/auto-muse-spark-1-3-contributor:high
+  default: magpie/group/main-implementer:high
+  slow: magpie/claude/claude-opus-5-5:medium
+  writer: magpie/claude/claude-sonnet-5-5:high
+  vision: magpie/group/auto-deepseek-v4-1-flash:high
+  smol: magpie/group/auto-deepseek-v4-1-flash:high
+  task: magpie/group/auto-deepseek-v4-1-flash:high
+  commit: magpie/group/auto-deepseek-v4-1-flash
+  memory: magpie/group/auto-deepseek-v4-1-flash:high
+  image: openrouter/openai/gpt-image-2.5-sunburst
+  web: web/kagi
+  speech: local/kokoro
+symbolPreset: nerd
+theme:
+  dark: titanium
+setupVersion: 2
+defaultThinkingLevel: high
+autolearn:
+  enabled: true
+  autoContinue: false
+memory:
+  backend: hindsight
+task:
+  disabledAgents: []
+  agentModelOverrides: {}
+composer:
+  shape: band
+  tokenRate: true
+steeringMode: one-at-a-time
+colorBlindMode: false
+cycleOrder:
+  - smol
+  - default
+  - slow
+advisor:
+  enabled: true
+  syncBacklog: "off"
+power:
+  sleepPrevention: idle
+hideThinkingBlock: false
+modelRoleStorage: global
+statusLine:
+  preset: compact
+  separator: slash
+  sessionAccent: true
+  transparent: false
+  showHookStatus: true
+  compactThinkingLevel: true
+proseOnlyThinking: true
+display:
+  showTokenUsage: true
+  pinnedAgents: collapsed
+  cacheMissMarker: true
+  showTurnTime: true
+tier:
+  openai: none
+providers:
+  autoThinkingMaxEffort: xhigh
+personality: default
+compaction:
+  idleThresholdTokens: 128000
