@@ -30,3 +30,6 @@ uv = "latest"
 watchexec = "latest"
 yazi = "latest"
 zoxide = "latest"
+
+[settings]
+minimum_release_age = "6h"
