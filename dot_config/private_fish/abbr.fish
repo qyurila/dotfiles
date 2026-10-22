@@ -5,7 +5,10 @@ abbr -a -- lg lazygit
 abbr -a -- aptu 'sudo apt update && sudo apt upgrade'
 abbr -a -- apti 'sudo apt update && sudo apt install'
 
-abbr -a -- cma 'chezmoi add'
+abbr -a -- cm+ 'chezmoi add'
+abbr -a -- cma 'chezmoi apply'
+abbr -a -- cmd 'chezmoi diff'
+abbr -a -- cme 'chezmoi edit'
 abbr -a -- cmg 'lazygit -p ~/.local/share/chezmoi'
 abbr -a -- cmz 'z ~/.local/share/chezmoi'
 
