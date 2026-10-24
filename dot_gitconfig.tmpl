@@ -22,9 +22,10 @@
 	enabled = true
 	autoUpdate = false
 
-{{- if eq .chezmoi.os "windows"}}
-
 [credential]
+{{- if ne .chezmoi.os "windows"}}
+	helper = !gh auth git-credential
+{{- else}}
 	helper = !C:/Users/Hyeon/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
 [gpg.ssh]
 	program = "C:/Windows/System32/OpenSSH/ssh-keygen.exe"
@@ -32,10 +33,4 @@
 	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
 [windows]
 	appendAtomically = false
-
-{{- else}}
-
-[credential]
-	helper = !gh auth git-credential
-
 {{- end}}
