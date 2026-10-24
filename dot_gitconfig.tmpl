@@ -35,10 +35,7 @@
 
 {{- else}}
 
-[credential "https://github.com"]
-	helper =
+[credential]
 	helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-	helper =
-	helper = !gh auth git-credential
+
 {{- end}}
