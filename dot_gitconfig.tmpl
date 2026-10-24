@@ -23,19 +23,22 @@
 	autoUpdate = false
 
 {{- if eq .chezmoi.os "windows"}}
+
 [credential]
 	helper = !C:/Users/Hyeon/scoop/apps/git/current/mingw64/bin/git-credential-manager.exe
+[gpg.ssh]
+	program = "C:/Windows/System32/OpenSSH/ssh-keygen.exe"
 [safe]
 	directory = C:/Users/Hyeon/scoop/apps/scoop/current/*
 [windows]
 	appendAtomically = false
-[gpg.ssh]
-	program = "C:/Windows/System32/OpenSSH/ssh-keygen.exe"
+
 {{- else}}
+
 [credential "https://github.com"]
 	helper =
-	helper = !/usr/bin/env gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper =
-	helper = !/usr/bin/env gh auth git-credential
+	helper = !gh auth git-credential
 {{- end}}
