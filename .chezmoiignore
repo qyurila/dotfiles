@@ -1,4 +1,8 @@
 README.md
+AGENTS.md
+
+# Repo-only helper scripts (run by hand, not deployed to ~)
+scripts/
 
 {{- if ne .chezmoi.os "linux" }}
 
