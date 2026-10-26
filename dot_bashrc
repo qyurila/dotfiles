@@ -133,3 +133,6 @@ fi
 if command -v mise >/dev/null 2>&1; then
     eval "$(mise activate bash)"
 fi
+
+# Proton Pass CLI: keep login across WSL restarts (key stored on disk instead of kernel keyring)
+export PROTON_PASS_KEY_PROVIDER=fs
