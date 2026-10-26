@@ -205,11 +205,13 @@ TOTAL_STAGES=5
 banner "Proton Pass CLI: keep your login across WSL restarts"
 
 SESSION_DIR="$HOME/.local/share/proton-pass-cli"
-case "${SHELL:-}" in
-  */zsh) RC_FILE="$HOME/.zshrc" ;;
-  *)     RC_FILE="$HOME/.bashrc" ;;
-esac
 EXPORT_LINE='export PROTON_PASS_KEY_PROVIDER=fs'
+case "${SHELL:-}" in
+  */zsh)  RC_FILE="$HOME/.zshrc" ;;
+  */fish) RC_FILE="$HOME/.config/fish/envs.fish"; RC_LINE='set -gx PROTON_PASS_KEY_PROVIDER fs' ;;
+  *)      RC_FILE="$HOME/.bashrc" ;;
+esac
+RC_LINE="${RC_LINE:-$EXPORT_LINE}"
 
 # ── 1. Preflight ──────────────────────────────────────────────────────────
 stage "Check your setup"
@@ -238,20 +240,34 @@ fi
 
 # ── 3. Persist the env var ────────────────────────────────────────────────
 stage "Set PROTON_PASS_KEY_PROVIDER=fs"
-say "This adds one line to $RC_FILE so every new shell uses the file key."
-if grep -qE '^[[:space:]]*export[[:space:]]+PROTON_PASS_KEY_PROVIDER=' "$RC_FILE" 2>/dev/null; then
+RC_PATTERN='^[[:space:]]*(export|set -gx)[[:space:]]+PROTON_PASS_KEY_PROVIDER[ =]'
+if grep -qE "$RC_PATTERN" "$RC_FILE" 2>/dev/null; then
   note "$RC_FILE already sets PROTON_PASS_KEY_PROVIDER:"
   grep -E 'PROTON_PASS_KEY_PROVIDER' "$RC_FILE" | sed 's/^/    /'
   warn "If that isn't 'fs', edit it by hand; this wizard won't overwrite it."
-elif confirm "Append '$EXPORT_LINE' to $RC_FILE?"; then
-  printf '%s\n' "$EXPORT_LINE" >> "$RC_FILE"
+elif command -v chezmoi >/dev/null 2>&1 && chezmoi source-path "$RC_FILE" >/dev/null 2>&1; then
+  say "$RC_FILE is managed by chezmoi. A direct edit would be lost on the next"
+  say "'chezmoi apply', so add this line through chezmoi instead:"
+  printf '\n    %s\n\n' "$RC_LINE"
+  pause "Press Enter to open 'chezmoi edit --apply $RC_FILE'."
+  chezmoi edit --apply "$RC_FILE" || warn "chezmoi edit reported an error."
+  if grep -qE "$RC_PATTERN" "$RC_FILE" 2>/dev/null; then
+    printf '  %s✓ found%s in %s\n' "$GREEN" "$RESET" "$RC_FILE"
+  else
+    warn "$RC_FILE still has no PROTON_PASS_KEY_PROVIDER line."
+    SKIPPED+=("add '$RC_LINE' to $RC_FILE via chezmoi")
+  fi
+elif confirm "Append '$RC_LINE' to $RC_FILE?"; then
+  printf '%s\n' "$RC_LINE" >> "$RC_FILE"
   printf '  %s✓ added%s to %s\n' "$GREEN" "$RESET" "$RC_FILE"
 else
-  SKIPPED+=("add '$EXPORT_LINE' to $RC_FILE")
+  SKIPPED+=("add '$RC_LINE' to $RC_FILE")
 fi
 # This script's own child processes (the login below) must use fs too.
 export PROTON_PASS_KEY_PROVIDER=fs
 note "Exported for the rest of this wizard run."
+warn "Open a NEW terminal before using pass-cli: shells that were already open lack the variable,"
+warn "and a shell on the wrong provider can't read the key (hmac error) or force-logs you out."
 
 # ── 4. Log in ─────────────────────────────────────────────────────────────
 stage "Log in with the filesystem provider"
