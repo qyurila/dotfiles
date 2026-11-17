@@ -4,6 +4,11 @@ AGENTS.md
 # Repo-only helper scripts (run by hand, not deployed to ~)
 scripts/
 
+.t3/*
+!.t3/userdata
+.t3/userdata/*
+!.t3/userdata/themes
+
 {{- if ne .chezmoi.os "linux" }}
 
 # Linux apps
@@ -20,5 +25,6 @@ scripts/
 # Windows-only apps
 scoop/
 AppData/
+OneDrive/
 
 {{- end }}
